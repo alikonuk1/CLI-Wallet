@@ -1,0 +1,22 @@
+{
+  "name": "cli-wallet",
+  "version": "1.0.0",
+  "description": "simple ethereum wallet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alikonuk1/CLI-Wallet.git"
+  },
+  "author": "ali konuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alikonuk1/CLI-Wallet/issues"
+  },
+  "homepage": "https://github.com/alikonuk1/CLI-Wallet#readme",
+  "dependencies": {
+    "ethers": "^5.7.1"
+  }
+}
