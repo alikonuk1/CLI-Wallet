@@ -1,27 +1,21 @@
 import conf from 'conf';
 import chalk from 'chalk';
 
-const save = async () => {
-    const config = new conf();
-    const walletList = config.get('wallet-list')
-    if (walletList && walletList.length) {
-        console.log(
-            chalk.blue.bold('Tasks in green are done. Tasks in yellow are still not done.')
-        )
-        todoList.forEach((task, index) => {
-            if (task.done) {
-                console.log(
-                    chalk.greenBright(`${index}. ${task.text}`)
-                )
-            } else {
-                console.log(
-                    chalk.yellowBright(`${index}. ${task.text}`)
-                )
-            }
-        })
-    } else {
-        console.log(chalk.red.bold('You don\'t have any saved wallet yet.'))
-    }
-}
 
-save();
+export function save (address, privateKey, mnemonic) {
+    const config = new conf();
+    let walletList = config.get('wallet-list');
+
+    if (!walletList) {
+        walletList = []
+    }
+    walletList.push({
+        text: address,
+        text: privateKey,
+        text: mnemonic
+    });
+
+    config.set('wallet-list', walletList);
+
+    console.log(chalk.green.bold('Task has been added successfully!'));
+}
