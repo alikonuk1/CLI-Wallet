@@ -1,2 +1,2 @@
 # CLI-Wallet
-Ethereum cli wallet 
+Terminal based Ethereum wallet 
